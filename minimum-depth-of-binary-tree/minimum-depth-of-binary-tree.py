@@ -12,14 +12,13 @@ class Solution:
     def inOrder(self,root,ans):
         if(root == None):
             return 0
-        if(root.left or root.right):
-            if(root.left):
-                ans = min(ans,1+self.inOrder(root.left,ans))
-            if(root.right):
-                ans = min(ans,1+self.inOrder(root.right,ans))
-      
-        else:
+        if(root.left):
+            ans = min(ans,1+self.inOrder(root.left,ans))
+        if(root.left ==None and root.right == None):
             return 1
+        if(root.right):
+            ans = min(ans,1+self.inOrder(root.right,ans))
+
  
 
 

@@ -3,11 +3,13 @@ class Solution(object):
         """
         :type height: List[int]
         :rtype: int
+        Mridul Bhaskar
         """
         low = 0
         high = len(height)-1
         ans = 0
         temp = 0
+
 
         while(low<=high):
             if(height[low]<height[high]):

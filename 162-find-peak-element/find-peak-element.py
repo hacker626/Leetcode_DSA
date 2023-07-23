@@ -4,8 +4,8 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        if(len(nums) == 1):
-            return 0
+        # if(len(nums) == 1):
+        #     return 0
         if(len(nums)>=2):
             if(nums[0]>nums[1]):
                 return 0
@@ -25,7 +25,7 @@ class Solution(object):
                 high=mid-1
             else:
                 low=mid+1
-        # return 8
+        return mid
         
 
 

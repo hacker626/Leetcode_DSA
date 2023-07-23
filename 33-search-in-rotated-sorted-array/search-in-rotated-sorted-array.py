@@ -6,24 +6,15 @@ class Solution(object):
         :rtype: int
         """
         n=len(nums)
-        arr=nums[:]
-        # if(nums[0] == target):
-        #     return 0
-        # elif(nums[-1] == target):
-        #     return n-1
-        # if(n<=3):
-        #     for i in range(n):
-        #         if(arr[i] == target):
-        #             return i
-        #     return -1
+        
         def bSearch(arr,s,e,target):
 
 
             while(s<=e):
                 mid = s+(e-s)//2
-                if(arr[mid] == target):
+                if(nums[mid] == target):
                     return mid
-                elif(arr[mid]>target):
+                elif(nums[mid]>target):
                     e=mid-1
                 else:
                     s=mid+1
@@ -36,9 +27,9 @@ class Solution(object):
             # k = -1
             while(low<=high):
                 mid = low+(high-low)//2
-                if(0<mid<n-1 and arr[mid]<arr[mid-1] and arr[mid]<arr[mid+1]):
+                if(0<mid<n-1 and nums[mid]<nums[mid-1] and nums[mid]<nums[mid+1]):
                     return mid
-                elif(arr[mid]<arr[-1]):
+                elif(nums[mid]<nums[-1]):
                     high=mid-1
                 else:
                     low=mid+1

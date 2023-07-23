@@ -7,10 +7,10 @@ class Solution(object):
         """
         n=len(nums)
         arr=nums[:]
-        if(nums[0] == target):
-            return 0
-        elif(nums[-1] == target):
-            return n-1
+        # if(nums[0] == target):
+        #     return 0
+        # elif(nums[-1] == target):
+        #     return n-1
         # if(n<=3):
         #     for i in range(n):
         #         if(arr[i] == target):

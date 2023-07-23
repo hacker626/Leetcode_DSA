@@ -11,11 +11,11 @@ class Solution(object):
             return 0
         elif(nums[-1] == target):
             return n-1
-        if(n<=3):
-            for i in range(n):
-                if(arr[i] == target):
-                    return i
-            return -1
+        # if(n<=3):
+        #     for i in range(n):
+        #         if(arr[i] == target):
+        #             return i
+        #     return -1
         def bSearch(arr,s,e,target):
 
 

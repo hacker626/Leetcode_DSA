@@ -1,12 +1,27 @@
 import math
-class Solution:
-    def minSpeedOnTime(self, dist: List[int], hour: float) -> int:
-        is_ontime = lambda s: sum(math.ceil(d / s) for d in dist[:-1]) + dist[-1] / s <= hour
-        low, high = 0, 10**7
-        while low + 1 < high:
-            mid = low + (high - low) // 2
-            if is_ontime(mid):
-                high = mid
+
+class Solution(object):
+    def minSpeedOnTime(self, dist, hour):
+        """
+        :type dist: List[int]
+        :type hour: float
+        :rtype: int
+        """
+        low,high = 1,10**7
+        ans = -1
+
+        while(low<=high):
+            mid = low+(high-low)//2
+            temp = 0.0
+            for i in range(len(dist)-1):
+                temp = math.ceil(temp + float(dist[i]/float(mid)))
+                # if(mid == 3):
+                #     print(temp)
+                # return mid
+            temp+=(float(dist[-1]/float(mid)))
+            if(temp>hour):
+                low = mid+1
             else:
-                low = mid
-        return high if is_ontime(high) else -1
+                ans = mid
+                high = mid-1
+        return ans

@@ -8,22 +8,24 @@ class Solution(object):
 
 
         dict_ = {}
-        self.func(s,dict_,len(s))
+        self.func(s,dict_,0,"")
         return dict_.keys()
 
-    def func(self,s,dict_,n):
-        if(n<=0):
-            dict_[s] = 1
+    def func(self,s,dict_,n,temp):
+        if(n==len(s)):
+            dict_[temp] = 1
             return
 
-        if(97<=ord(s[n-1])<=122):
-            temp = s[:n-1]+s[n-1].upper()+s[n:]
-            self.func(temp,dict_,n-1)
-        elif(65<=ord(s[n-1])<=90):
-            temp = s[:n-1]+s[n-1].lower()+s[n:]
-            self.func(temp,dict_,n-1)
-
-        self.func(s,dict_,n-1)
+        if(97<=ord(s[n])<=122):
+            str1 =temp+s[n].upper()
+            self.func(s,dict_,n+1,str1)
+            
+        elif(65<=ord(s[n])<=90):
+            str1 = temp+s[n].lower()
+            self.func(s,dict_,n+1,str1)
+        
+        temp+=s[n]
+        self.func(s,dict_,n+1,temp)
 
 
 

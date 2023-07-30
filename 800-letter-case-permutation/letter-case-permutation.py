@@ -14,7 +14,7 @@ class Solution(object):
 
         if(n == 0):
             return
-        str1 = s[:]
+        str1 = s
         
         if(65<=ord(s[n-1])<=90):
             str1 = s[:n-1]+s[n-1].lower()+s[n:]

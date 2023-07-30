@@ -6,27 +6,26 @@ class Solution(object):
         """
 
 
-        temp = {}
-        self.func(s,temp,len(s))
-        return temp.keys()
 
+        dict_ = {}
+        self.func(s,dict_,len(s))
+        return dict_.keys()
 
-
-    def func(self,s,temp,n):
-        if(n == 0):
-            if(s not in temp):
-                temp[s] = 1
+    def func(self,s,dict_,n):
+        if(n<=0):
+            dict_[s] = 1
             return
 
+        if(97<=ord(s[n-1])<=122):
+            temp = s[:n-1]+s[n-1].upper()+s[n:]
+            self.func(temp,dict_,n-1)
+        elif(65<=ord(s[n-1])<=90):
+            temp = s[:n-1]+s[n-1].lower()+s[n:]
+            self.func(temp,dict_,n-1)
+
+        self.func(s,dict_,n-1)
 
 
 
-        if(65<=ord(s[n-1])<=90):
-            str1 = s[:n-1]+s[n-1].lower()+s[n:]
-            self.func(str1,temp,n-1)
-            pass
-        elif(97<=ord(s[n-1])<=122):
-            str1 = s[:n-1]+s[n-1].upper()+s[n:]
-            self.func(str1,temp,n-1)
-        self.func(s,temp,n-1)
+
         

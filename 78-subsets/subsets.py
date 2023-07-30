@@ -4,19 +4,24 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        dict_ = []
-        self.func(nums,dict_,0,[])
-        return list(dict_)
 
+
+        dict_ = []
+        temp = len(nums)
+        print(temp)
+        self.func(nums,dict_,temp,[])
+        return dict_
     def func(self,nums,dict_,n,ans):
-        if(n == len(nums)):
+        if(n<=0):
             dict_.append(ans)
-            return
-        # ans.append()
-        self.func(nums,dict_,n+1,ans)
-        temp = ans+[nums[n]]
-        # ans.append(nums[n])
-        self.func(nums,dict_,n+1,temp)
-        # ans.pop()
-        
+            return       
+
+
+
+        self.func(nums,dict_,n-1,ans)
+        temp = ans+[nums[n-1]]
+        # print(temp)
+        self.func(nums,dict_,n-1,temp)
+
+
         

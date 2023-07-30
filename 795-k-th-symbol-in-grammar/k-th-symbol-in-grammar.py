@@ -11,5 +11,6 @@ class Solution(object):
         if(k<=(2**(n-2))):
             return self.kthGrammar(n-1,k)
         else:
-            return 1^self.kthGrammar(n-1,k-(2**(n-2)))
+            return 1^self.kthGrammar(n-1,k-2**(n-2))
+
         

@@ -15,7 +15,7 @@ class Solution(object):
 
         if(len(temp) == k):
             ans.append(temp)
-            return
+            # return
 
 
         for i in range(start,n+1):

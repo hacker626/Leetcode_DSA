@@ -14,15 +14,14 @@ class Solution(object):
         self.func(root,ans)
         return ans[0]
 
-    def func(self,root,ans):
 
+    def func(self,root,ans):
         if(root == None):
             return 0
+
         l = max(0,self.func(root.left,ans))
         r = max(0,self.func(root.right,ans))
 
-        ans[0] = max(ans[0],root.val+l+r)
-
+        ans[0] = max(ans[0],l+r+root.val)
 
         return root.val+max(l,r)
-        

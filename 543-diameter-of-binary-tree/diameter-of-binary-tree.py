@@ -10,19 +10,19 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
-        temp = [0]
-        self.func(root,temp)
-        return temp[0]
 
-    def func(self,root,temp):
-
+        ans = [0]
+        self.func(root,ans)
+        return ans[0]
+    def func(self,root,ans):
         if(root == None):
             return 0
 
-        l = self.func(root.left,temp)
-        r = self.func(root.right,temp)
 
-        temp[0] = max(temp[0],l+r)
+        l = self.func(root.left,ans)
+        r = self.func(root.right,ans)
+
+        ans[0] = max(ans[0],l+r)
 
         return 1+max(l,r)
         

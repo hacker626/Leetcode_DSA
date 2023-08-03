@@ -14,14 +14,12 @@ class Solution(object):
         self.func(root,temp)
         return temp[0]
 
-
     def func(self,root,temp):
         if(root == None):
             return 0
+        l = self.func(root.left,temp)
+        r = self.func(root.right,temp)
 
-        lv = self.func(root.left,temp)
-        rv = self.func(root.right,temp)
-        temp[0] = max(temp[0],lv+rv)
+        temp[0] = max(temp[0],l+r)
 
-        return 1+max(lv,rv)
-        
+        return 1+max(l,r)

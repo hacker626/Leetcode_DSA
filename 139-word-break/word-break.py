@@ -4,7 +4,6 @@ class Solution:
         @lru_cache(None) # and this
         def helper(prev):
             if prev=="":return True
-            cur=prev
             for word in wordDict:
                 if prev.startswith(word):
                     i=len(word)

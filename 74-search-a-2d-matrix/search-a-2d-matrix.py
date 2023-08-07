@@ -5,19 +5,15 @@ class Solution(object):
         :type target: int
         :rtype: bool
         """
-        row=len(matrix)
-        col = len(matrix[0])
+        row,col = 0,len(matrix[0])-1
 
-        low,high=0,(row*col)-1
+        while(0<=row<len(matrix) and 0<=col<len(matrix[0])):
 
-        while(low<=high):
-            mid=low+(high-low)//2
-
-            if(matrix[mid//col][mid%col] == target):
+            if(target == matrix[row][col]):
                 return 1
-            elif(matrix[mid//col][mid%col]>target):
-                high=mid-1
+            elif(target>matrix[row][col]):
+                row+=1
             else:
-                low=mid+1
+                col-=1
         return 0
         

@@ -5,15 +5,16 @@ class Solution(object):
         :type target: int
         :rtype: bool
         """
-        row,col = 0,len(matrix[0])-1
+        low,high = 0,len(matrix[0])*len(matrix)-1
 
-        while(0<=row<len(matrix) and 0<=col<len(matrix[0])):
-
-            if(target == matrix[row][col]):
+        while(low<=high):
+            mid = (low)+(high-low)//2
+            ar = mid//len(matrix[0])
+            ac = mid%len(matrix[0])
+            if(matrix[ar][ac] == target):
                 return 1
-            elif(target>matrix[row][col]):
-                row+=1
+            elif(matrix[ar][ac]>target):
+                high = mid-1
             else:
-                col-=1
+                low = mid+1
         return 0
-        

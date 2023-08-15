@@ -10,17 +10,16 @@ class Solution(object):
         :type x: int
         :rtype: ListNode
         """
-        temp1,temp2 = ListNode(-1),ListNode(-1)
-        prev,post=temp1,temp2
-
+        temp1,temp2=[],[]
         while(head):
             if(head.val<x):
-                prev.next = ListNode(head.val)
-                prev=prev.next
+                temp1.append(head.val)
             else:
-                post.next=ListNode(head.val)
-                post=post.next
+                temp2.append(head.val)
             head=head.next
-        prev.next=temp2.next
-        return temp1.next
-        
+        ans = ListNode(-1)
+        temp = ans
+        for i in temp1+temp2:
+            temp.next=ListNode(i)
+            temp=temp.next
+        return ans.next

@@ -9,7 +9,7 @@ class Solution:
                 if mat[r][c] == 0:
                     q.append((r, c))
                 else:
-                    mat[r][c] = -1  # Marked as not processed yet!
+                    mat[r][c] = -1  
 
         while q:
             r, c = q.popleft()

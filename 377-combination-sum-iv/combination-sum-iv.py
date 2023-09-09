@@ -5,17 +5,16 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
-        dp = {}
+        dp = [-1 for i in range(target+1)]
         return self.func(nums,target,dp)
     def func(self,nums,target,dp):
         if(target == 0):
             return 1
         elif(target<0):
             return 0
-        if(target in dp):
+        if(dp[target] != -1):
             return dp[target]
-        if(target not in dp):
-            dp[target] = 0
+        dp[target] = 0
         for i in range(len(nums)):
             dp[target] += self.func(nums,target-nums[i-1],dp)
             

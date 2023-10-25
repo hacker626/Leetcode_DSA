@@ -5,14 +5,10 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-
-        if(n == 1):
+        if(n == 1 or n == 0):
             return 0
-
-
         if(k<=(2**(n-2))):
             return self.kthGrammar(n-1,k)
         else:
             return 1^self.kthGrammar(n-1,k-(2**(n-2)))
-
         

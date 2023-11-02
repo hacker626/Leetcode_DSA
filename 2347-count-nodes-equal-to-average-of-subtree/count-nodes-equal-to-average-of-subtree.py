@@ -10,70 +10,24 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: int
         """
+
         count = [0]
         self.func(root,count)
         return count[0]
-
+    
     def func(self,root,count):
+
         if(root == None):
             return [0,0]
-        # temp+=1
+
         left = self.func(root.left,count)
         right = self.func(root.right,count)
-        sumtemp = left[0]+right[0]+root.val
-        temp  = left[1]+right[1]+1
-        if(sumtemp/temp == root.val):
+
+        totalsum = left[0]+right[0]+root.val
+        div = left[1]+right[1]+1
+
+
+        if(totalsum/div == root.val):
             count[0]+=1
-        return [sumtemp,temp]
-
-        
-        
-        
-
-    
-
-
-
-
-
-
-
-
-
-
-
-    # def averageOfSubtree(self, root):
-    #     """
-    #     :type root: Optional[TreeNode]
-    #     :rtype: int
-    #     """
-    #     count = [0]
-    #     self.func(root,count)
-    #     return count[0]
-    # def inOrder(self,root,store):
-
-    #     if(root == None):
-    #         return
-    #     store[1]+=1
-    #     self.inOrder(root.left,store)
-    #     store[0]+=root.val
-    #     # store[1]+=1
-
-    #     self.inOrder(root.right,store)
-    # def func(self,root,count):
-
-    #     if(root == None):
-    #         return 
-    #     self.func(root.left,count)
-    #     store = [0,0]
-    #     self.inOrder(root,store)
-    #     # print(store,store[0]/store[1],root.val)
-    #     if(store[0]/store[1] == root.val):
-    #         count[0]+=1
-    #     self.func(root.right,count)
-    #     # return count
-        
-        
-
-
+        return [totalsum,div]
         

@@ -1,6 +1,6 @@
 class Solution:
     def makeEqual(self, words: List[str]) -> bool:
-        dict_ = [0]*26
+        dict_ = [0 for i in range(26)]
         for i in words:
             for j in i:
                 temp = ord(j)-97

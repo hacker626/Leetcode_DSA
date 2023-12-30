@@ -1,14 +1,12 @@
 class Solution:
     def makeEqual(self, words: List[str]) -> bool:
-        dict_ = {}
+        dict_ = [0]*26
         for i in words:
             for j in i:
-                if(j not in dict_):
-                    dict_[j] = 1
-                else:
-                    dict_[j] += 1
+                temp = ord(j)-97
+                dict_[temp]+=1
         # print(dict_)
-        for i in dict_:
+        for i in range(26):
             if(dict_[i]%len(words) != 0):
                 return 0
         return 1

@@ -13,7 +13,7 @@ class Solution(object):
             # if(temp[i] == 0):
             #     temp.pop(i)
         
-        print(temp)
+        # print(temp)
         tempo = []
         for i in temp:
             if(i!=0):

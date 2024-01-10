@@ -15,7 +15,7 @@ class Solution(object):
 
         graph = {}
         self.inOrder(root,graph)
-        print(graph)
+        # print(graph)
 
         # graph = {}
 
@@ -23,7 +23,7 @@ class Solution(object):
         vis = {}
         for i in graph:
             vis[i] = -1
-        print(vis)
+        # print(vis)
         count = 0
         queue = [start]
         vis[start] = 1

@@ -28,13 +28,14 @@ class Solution(object):
         queue = [start]
         vis[start] = 1
         while(len(queue)>0):
-            count+=1
+            
             for i in range(len(queue)):
                 temp = queue.pop(0)
                 for j in graph[temp]:
                     if(vis[j] == -1):
                         queue.append(j)
                         vis[j] = 1
+            count+=1
         return count-1
 
         
